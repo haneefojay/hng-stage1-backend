@@ -8,6 +8,10 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI(title="HNG Stage 1 Task - String Analyzer Service")
 
+@app.get("/")
+def root():
+    return {"message": "String Analyzer API is running"}
+
 app.include_router(routes.router)
 
 @app.on_event("startup")
